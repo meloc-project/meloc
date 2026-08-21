@@ -1,25 +1,24 @@
-# The Meloc specification
+# The Meloc Specification
 
 - **Current version**: 0.0.0
 - **Last update**: 2026, 19 August
 
-Esta **especificación** define el formato obligatorio que todo componente Meloc debe seguir. Úsala como referencia técnica para que tu componente sea válido, portable y ejecutable en cualquier entorno de ejecución compatible.
+This **specification** defines the mandatory format that every Meloc module must follow. Use it as a technical reference to make your component valid, portable, and executable in any supported execution environment.
 
-## Requisitos mínimos
-Todo componente Meloc debe ser un archivo [YAML 1.2](https://yaml.org/spec/1.2/) válido. El intérprete debe rechazar el archivo si el formato no lo fuera, con el error n.º 1 y el mensaje «Error al leer el archivo – el contenido no es YAML 1.2 válido».
+## Minimum requirements
 
-Además, los siguientes campos son obligatorios:
+All Meloc modules must be valid [YAML 1.2](https://yaml.org/spec/1.2/) files. Else, the interpreter must reject the file with error #1 and the message "Error reading the file - the content is not valid YAML 1.2."
 
 ### `type`
-Declara que el archivo es un componente Meloc e indica qué versión de la especificación usa. El intérprete debe rechazar el archivo si no contiene este campo con el error n.º 2 y el mensaje «Error por ausencia del campo `type` – el archivo no se reconoce como componente Meloc válido».
+Declares that the file is a Meloc module and indicates which version of the specification it uses. The interpreter must reject the file if it does not contain this field with error #2 and the message "Error due to absence of field `type` - the file is not recognized as a valid Meloc module."
 
-El valor debe ser un texto con el formato «`meloc/component@[versión]`». El intérprete debe rechazar cuyo cualquier otro formato con el error n.º 3 y el mensaje «Error del campo `type` – el valor no sigue el formato esperado: `meloc/component@[versión]`». La versión debe incluir los tres números, sin omitir ninguno. Ver más detalles en [[Sistema de versiones (Meloc Components)]].
+The value must be a text with the format "`meloc@[version]`". The interpreter must reject any other format with error #3 and the message "Error in field `type` - the value does not follow the expected format: `meloc@[version]`." The version must include all three numbers, without omitting any. See more details in [[Version System]].
 
-El intérprete debe soportar una versión de la especificación concreta, a ser posible la más reciente. Debe rechazar cualquier versión superior a la que soporte, y debe rechazar cualquier versión menor inferior a la que soporte; lo hará con el error n.º 4 y el mensaje «Error del campo `type` – la versión `[0.x.y]` de Meloc Components no es compatible con este intérprete».
+The interpreter must declare which specification version it supports. It must reject any version higher than the one it supports, and it must reject any lower version than the one it supports; it will do so with error #4 and the message "Error in the `type` field - the version `[0.x.y]` of Meloc is not compatible with this interpreter."
 
-Ejemplo:
+Example:
 ```yaml
-type: meloc/component@0.0.0
+type: meloc@0.0.0
 ```
 
 ### `name`

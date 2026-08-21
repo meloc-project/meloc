@@ -5,11 +5,29 @@ A specification to build software through declarations. Build Meloc modules just
 
 Meloc aspires to redesign the way that we build software. I look for active ways to make development more natural and make safer and more flexible results. The project was built based on the principles found in this manifest.
 
-## Getting Started
-Work in progress…
+## Why Meloc is different
+|                 | Meloc                | Java/JavaScript/Python  | C++/Rust/Go            |
+| --------------- | -------------------- | ----------------------- | -----------------------|
+| **Paradigm**    | Declarative          | Imperative (high level) | Imperative (low level) |
+| **Expressions** | Structures and rules | High-level instructions | Low-level instructions |
+| **Types**       | Functional           | Half-functional         | Technical              |
 
-## The spec
-Work in progress…
+## Initial example
+`hello-world.yaml`
+```yaml
+type: meloc@0.0.0
+name: hello-world
+version: 1.0.0
+
+methods:
+  - name: greet
+    type: text
+    formula: "Hello, world!"
+```
+
+This is expected to work well with something like `meloc hello-world --call greet`.
+
+Want to know more? See the whole [specification](spec/index.md).
 
 ## Current status
 - Experimental 🧪 — MVP still in development

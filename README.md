@@ -1,7 +1,7 @@
 # Meloc
 <img src="logo.png" alt="Meloc Logo" width="100" />
 
-A [specification](spec/index.md) to build software through declarations. Build Meloc modules just writing them in YAML. Focus on what your module does, not how. No imperative code, no technical types. Only rules, states, and contracts.
+A [specification](spec/index.md) to build software through declarations. Build Meloc modules just writing them in [YAML](https://yaml.org/). Focus on what your module does, not how. No imperative code, no technical types. Only rules, states, and contracts.
 
 Meloc aspires to redesign the way that we build software. I look for active ways to make development more natural and make safer and more flexible results. The project was built based on the principles found in this manifest.
 

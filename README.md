@@ -20,12 +20,12 @@ name: hello-world
 version: 1.0.0
 
 methods:
-  - name: greet
+  - name: start
     type: text
     formula: "Hello, world!"
 ```
 
-This is expected to work well with something like `meloc hello-world --call greet`.
+This is expected to work well with something like `meloc run hello-world` in your terminal.
 
 Want to know more? See the whole [specification](spec/index.md).
 

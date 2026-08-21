@@ -15,7 +15,7 @@ Meloc aspires to redesign the way that we build software. I look for active ways
 ## Initial example
 `hello-world.yaml`
 ```yaml
-type: meloc@0.0.0
+type: meloc/module@0.0.0
 name: hello-world
 version: 1.0.0
 

@@ -3,7 +3,7 @@
 - **Current version**: 0.0.0
 - **Last update**: 2026, 19 August
 
-This **specification** defines the mandatory format that every Meloc module must follow. Use it as a technical reference to make your component valid, portable, and executable in any supported execution environment.
+This **specification** defines the mandatory format that every Meloc module must follow. Use it as a technical reference to make your module valid, portable, and executable in any supported execution environment.
 
 ## Minimum requirements
 

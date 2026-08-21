@@ -12,13 +12,13 @@ All Meloc modules must be valid [YAML 1.2](https://yaml.org/spec/1.2/) files. El
 ### `type`
 Declares that the file is a Meloc module and indicates which version of the specification it uses. The interpreter must reject the file if it does not contain this field with error #2 and the message "Error due to absence of field `type` - the file is not recognized as a valid Meloc module."
 
-The value must be a text with the format "`meloc@[version]`". The interpreter must reject any other format with error #3 and the message "Error in field `type` - the value does not follow the expected format: `meloc@[version]`." The version must include all three numbers, without omitting any. See more details in [[Version System]].
+The value must be a text with the format "`meloc/module@[version]`". The interpreter must reject any other format with error #3 and the message "Error in field `type` - the value does not follow the expected format: `meloc/module@[version]`." The version must include all three numbers, without omitting any. See more details in [[Version System]].
 
 The interpreter must declare which specification version it supports. It must reject any version higher than the one it supports, and it must reject any lower version than the one it supports; it will do so with error #4 and the message "Error in the `type` field - the version `[0.x.y]` of Meloc is not compatible with this interpreter."
 
 Example:
 ```yaml
-type: meloc@0.0.0
+type: meloc/module@0.0.0
 ```
 
 ### `name`

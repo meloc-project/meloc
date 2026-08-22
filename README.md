@@ -5,7 +5,7 @@ A specification to build software through declarations. Build Meloc modules just
 
 See the [specification](spec/index.md).
 
-Meloc aspires to redesign the way that we build software. I look for active ways to make development more natural and make safer and more flexible results. The project was built based on the principles found in this [manifest](manifest.md).
+Meloc aspires to redesign the way that we build software. This project is my biggest attempt to make software development feel more natural and make safer and more flexible results. The project was built based on the principles found in this [manifest](manifest.md).
 
 ## Why Meloc is different
 |                 | Meloc                | Java/JavaScript/Python  | C++/Rust/Go            |

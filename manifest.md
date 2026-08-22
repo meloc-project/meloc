@@ -3,7 +3,7 @@
 Only if our software is natural and reliable, can we ensure that it is sustainable. Therefore, Meloc argues that every software must follow concepts as basic as these:
 
 ## The six principles
-### 1. Human
+### 1. Human first
 Human language is above machine language. Cognitive ease, above optimization.
 
 ### 2. Data over code

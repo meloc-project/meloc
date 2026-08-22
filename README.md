@@ -17,17 +17,17 @@ Meloc aspires to redesign the way that we build software. I look for active ways
 ## Initial example
 `hello-world.yaml`
 ```yaml
-type: meloc@0.0.0
+type: meloc/module@0.0.0
 name: hello-world
 version: 1.0.0
 
 methods:
-  - name: greet
+  - name: start
     type: text
     formula: "Hello, world!"
 ```
 
-This is expected to work well with something like `meloc hello-world --call greet`.
+This is expected to work well with something like `meloc run hello-world` in your terminal.
 
 Want to know more? See the whole [specification](spec/index.md).
 

@@ -54,26 +54,26 @@ name: tic-tac-toe-engine
 version: 1.2.0
 ```
 
-## Más allá de lo requerido
-Para que el componente sea coherente, necesita campos adicionales como los que se describen en esta sección. Su uso no es obligatorio y dependerá del propósito del componente y sus necesidades —ver más detalles en [[Modelos de diseño (Meloc Components)]].
+## Beyond what is required
+For the module to be consistent, you need additional fields such as those described in this section. Its use is not mandatory and will depend on the purpose or needs of the module  - see more details in [[Design Models]].
 
 ### `display-name`
-Declara el nombre natural del componente, en contraposición con su nombre seguro —campo `name`. El valor debe ser un texto.
+Declare the natural name of the module, as opposed to its safe name - field `name`. The value must be a text.
 
 > **Nota**: queda pendiente definir qué hace el intérprete si encuentra un valor vacío explícito en el campo. ¿Existe un modo estricto en YAML para evitar esto en cualquier campo?
 
-Ejemplo:
+Example:
 ```yaml
 name: tic-tac-toe-engine
 display-name: Tic-tac-toe Engine
 ```
 
 ### `state`
-Declara una lista de propiedades que definen el estado del componente. Cada ítem de la lista se denomina propiedad de estado. Ver más detalles en [[Propiedades de estado (Meloc Components)]].
+Declares a list of properties that define the state of the module. Each item in the list is called a state property. See more details in [[State Properties]].
 
-Ejemplo:
+Example:
 ```yaml
-type: meloc/component@0.0.0
+type: meloc/module@0.0.0
 name: to-dos-tool
 version: 0.0.0
 

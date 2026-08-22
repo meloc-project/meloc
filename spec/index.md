@@ -28,35 +28,28 @@ The value must be a safe name - see details in [[Safe names]]. The interpreter m
 
 Commonly the module will be hosted in a file system. The file that contains it must have exactly the same name as indicated in the `name` field. This requirement simplifies the process of resolving dependencies, and is mandatory even if the module is not being used as a dependency of another for now. See more details in [[Resolving Dependencies]]. The interpreter must reject any file whose name does not match the value of the `name` field with error #7 and the message "Error reading the file - the file name does not match the value of the `name` field."
 
-### `name`
-Declara el nombre único que identifica al componente. El intérprete debe rechazar el archivo si no contiene este campo con el error n.º 5 y el mensaje «Error por ausencia del campo `name` – el componente no tiene un nombre que lo identifique».
-
-El valor debe ser un nombre seguro —ver los detalles en [[Nombres seguros (Meloc Components)]]. El intérprete debe rechazar cualquier otro tipo de nombre con el error n.º 6 y el mensaje «Error del campo `name` – el valor no cumple los requisitos de nombre seguro —más información en https://sitio-web/docs/spec/secure-names».
-
-Comúnmente el componente estará alojado en un sistema de ficheros. El archivo que lo contenga debe tener exactamente el mismo nombre que se indique en el campo `name`. Este requisito simplifica el proceso de resolución de dependencias, y es obligatorio incluso si el componente no esta siendo usado como dependencia de otro por el momento. Ver más detalles en [[Resolución de dependencias (Meloc Components)]]. El intérprete debe rechazar cualquier archivo cuyo nombre no coincida con el valor del campo `name` con el error n.º 7 y el mensaje «Error al leer el archivo – el nombre del archivo no coincide con el valor del campo `name`».
-
 > **Nota**: queda pendiente definir qué requisitos aplican a la extensión del archivo. ¿Debe ser siempre `.yml`/`.yaml`?
 
-Ejemplo:
-`budget-calculator.yaml`
+Example:
+`mood-tracker.yaml`
 ```yaml
-type: meloc/component@0.0.0
-name: budget-calculator
+type: meloc/module@0.0.0
+name: mood-tracker
 ```
 
 ### `version`
-Declara la versión actual del componente. El intérprete debe rechazar el archivo si no contiene este campo con el error n.º 8 y el mensaje «Error por ausencia del campo `version` – el componente no indica cuál es su versión actual».
+Declares the current version of the module. The interpreter must reject the file if it does not contain this field with error #8 and the message "Error due to absence of field `version` - the module does not indicate what its current version is."
 
-El valor debe ser un texto que use versionado semántico —ver más detalles en [[Sistema de versiones (Meloc Components)]]. El intérprete debe rechazar cualquier otro formato con el error n.º 9 y el mensaje «Error del campo `version` – el valor no sigue el formato de versionado semántico».
+The value must be a text that uses semantic versioning - see more details in [[Version System]]. The interpreter must reject any other format with error #9 and the message "Error of the field `version` - the value does not follow the semantic versioning format."
 
-Es obligatorio incluir siempre los tres números de la versión —mayor, menor y parche—. El intérprete debe rechazar el valor de lo contrario con el error n.º 10 y el mensaje «Error del campo `version` – es obligatorio incluir los tres números de versionado semántico: mayor, menor y parche».
+It is mandatory to always include the three numbers of the version - major, minor and patch. The interpreter must reject the value of the opposite with error n.º 10 and the message "Error in the `version` field - it is mandatory to include the three semantic versioning numbers: major, minor and patch".
 
-Si el componente está alojado en un sistema de ficheros, el archivo que lo contenga puede  indicar la versión dentro del nombre del archivo. En tal caso, el nombre del componente y su versión deben separarse por una arroba y la versión debe encajar con la que se indique en el campo `version` —por ejemplo, tanto `mi-componente@2` como `mi-componente@2.5` encajan con la versión `2.5.8` y serían válidos. Este requisito simplifica el proceso de resolución de dependencias —ver más detalles en [[Resolución de dependencias (Meloc Components)]]. El intérprete debe rechazar cualquier archivo cuyo nombre incluya la versión y esta no coincida con el valor del campo `version` con el error n.º 11 y el mensaje «Error al leer el archivo – la versión incluida en el nombre no coincide con el valor del campo `version`».
+If the component is hosted in a file system, the file that contains it can indicate the version within the file name. In such a case, the name of the module and its version must be separated by an address and the version must fit with the one indicated in the `version` field - for example, both `my-component@2` and `my-component@2.5` fit with version `2.5.8` and would be valid. This requirement simplifies the dependency resolution process - see more details in [[Resolving dependencies]]. The interpreter must reject any file whose name includes the version and it does not match the value of the `version` field with error #11 and the message "Error reading file - the version included in the name does not match the value of the `version` field."
 
-Ejemplo:
+Example:
 `tic-tac-toe-engine@1.2.yaml`
 ```yaml
-type: meloc/component@0.0.0
+type: meloc/module@0.0.0
 name: tic-tac-toe-engine
 version: 1.2.0
 ```

@@ -5,6 +5,8 @@ A specification to build software through declarations. Define reusable modules 
 
 See the [specification](spec/index.md).
 
+> **Note**: a module is Meloc’s basic unit of software composition, just like a class is for object-oriented programming.
+
 ## What Meloc does
 
 | Meloc                      | Traditional languages                    |

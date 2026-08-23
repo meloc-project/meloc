@@ -33,8 +33,10 @@ This is expected to work well with something like `meloc run hello-world` in you
 Want to know more? See the whole [specification](spec/index.md).
 
 ## Current status
-- Experimental 🧪 — MVP still in development
-- First functional case 📅 — Spring 2027
+- 🔬 Experimental — MVP in development
+- 📅 First functional case – Spring 2027
+
+**Note**: Interoperability with existing systems (REST APIs, databases) is planned for future versions.
 
 ## Contribute
 - Report any issue at GitHub ⚠️

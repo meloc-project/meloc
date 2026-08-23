@@ -2,7 +2,7 @@
 
 Only if our software is natural and reliable, can we ensure that it is sustainable. Therefore, Meloc argues that every software must follow concepts as basic as these:
 
-## The six principles
+## The seven principles
 ### 1. Human first
 Human language is above machine language. Cognitive ease, above optimization.
 
@@ -20,6 +20,9 @@ When limits are declared from the beginning, no patches need to be applied after
 
 ### 6. Universality
 Software must not depend on a specific language or platform. You should be able to execute it on any valid environment.
+
+### 7. Controlled evolution
+The components must survive the interpreter’s versions. Breaking changes require major version + documented automatic migration. Better design procedures from the start means less breaking changes in time.
 
 ## Who this is for
 Meloc **is not** for those who do not want to change their processes, nor for teams accustomed to complex business patterns.

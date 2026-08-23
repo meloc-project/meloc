@@ -7,13 +7,19 @@ See the [specification](spec/index.md).
 
 > **Note**: a module is Meloc’s basic unit of software composition, just like a class is for object-oriented programming.
 
-## What Meloc does
-
-| Meloc                      | Traditional languages                    |
-|----------------------------|------------------------------------------|
-| Declarative structures     | Imperative code                          |
-| Human types (number, text) | Technical types (int32, float64, string) |
-| Auditable rules            | Hidden logic                             |
+## Comparing Meloc
+|                     | Traditional languages         | Meloc |
+|----------------------|--------------------------------|---|
+| **Purpose**          | Express any algorithm          | Describe software behavior |
+| **Logic**            | Instructions and algorithms    | **Declarative formulas and rules** |
+| **Control flow**     | Freely defined                 | **Deliberately constrained** |
+| **State**            | Freely managed                 | **Explicitly declared** |
+| **Behavior**         | Implemented step by step       | Derived from state, formulas, and methods |
+| **Abstraction**      | Can reach low-level operations | **Deliberately separated from low-level operations**           |
+| **Auditability**     | Depends on the code            | **A design priority** |
+| **Expressiveness**   | General-purpose                | **Deliberately constrained** |
+| **Efficiency**       | Can be a primary concern       | Secondary to clarity and predictability |
+| **Interoperability** | Broad                          | Secondary to clarity and predictability |
 
 [Read the manifest](manifest.md).
 

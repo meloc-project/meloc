@@ -1,7 +1,7 @@
 # Meloc
 <img src="logo.png" alt="Meloc Logo" width="100" />
 
-Software definition without programming. Define reusable modules in plain [YAML](https://yaml.org/). No compilers. Just declarations.
+A specification to build software through declarations. Define reusable modules in plain [YAML](https://yaml.org/). No compilers. Just declarations.
 
 See the [specification](spec/index.md).
 

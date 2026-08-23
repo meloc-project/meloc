@@ -1,20 +1,21 @@
 # Meloc
 <img src="logo.png" alt="Meloc Logo" width="100" />
 
-A specification to build software through declarations. Build Meloc modules just writing them in [YAML](https://yaml.org/). Focus on what your module does, not how. No imperative code, no technical types. Only rules, states, and contracts.
+Software definition without programming. Define reusable modules in plain [YAML](https://yaml.org/). No compilers. Just declarations.
 
 See the [specification](spec/index.md).
 
-Meloc aspires to redesign the way that we build software. This project is my biggest attempt to make software development feel more natural and make safer, more flexible results. The project was built based on the principles found in this [manifest](manifest.md).
+## What Meloc does
 
-## Why Meloc is different
-|                 | Meloc                | Java/JavaScript/Python  | C++/Rust/Go            |
-| --------------- | -------------------- | ----------------------- | -----------------------|
-| **Paradigm**    | Declarative          | Imperative (high level) | Imperative (low level) |
-| **Expressions** | Structures and rules | High-level instructions | Low-level instructions |
-| **Types**       | Functional           | Half-functional         | Technical              |
+| Meloc                      | Traditional languages                    |
+|----------------------------|------------------------------------------|
+| Declarative structures     | Imperative code                          |
+| Human types (number, text) | Technical types (int32, float64, string) |
+| Auditable rules            | Hidden logic                             |
 
-## Initial example
+[Read the manifest](manifest.md).
+
+## Minimal example
 `hello-world.yaml`
 ```yaml
 type: meloc/module@0.0.0

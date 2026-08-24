@@ -10,13 +10,15 @@ All Meloc modules must be valid [YAML 1.2](https://yaml.org/spec/1.2/) documents
 ### YAML features
 Not all features included in [YAML 1.2](https://yaml.org/spec/1.2/) are needed for parsing Meloc modules. In fact, our specification only requires the following features:
 
-| Feature                     | Usage in Meloc             |
-|-----------------------------|----------------------------|
-| Mappings (`{ key: value }`) | Define objects with fields |
-| Sequences (`- item`)        | Item lists                 |
-| Text scalar                 | All literal values         |
-| Block literals (`|`)        | Multiline formulas         |
-| Comments (`# text`)         | Optional documentation     |
+| Feature                       | Usage in Meloc             |
+|-------------------------------|----------------------------|
+| Mappings (`{ key: value }`)   | Define objects with fields |
+| Sequences (`- item`)          | Item lists                 |
+| Text scalar                   | All literal values         |
+| Block literals (vertical bar) | Multiline formulas         |
+| Comments (`# text`)           | Optional documentation     |
+
+When hosted in a file system, a Meloc module must include the file extension `.yaml` in its name. Note that omitting the extension or including `.yml` instead are not valid options. The corresponding MIME type, when needed, must be `text/yaml`.
 
 ### `type`
 Declares that the file is a Meloc module and indicates which version of the specification it uses. The interpreter must reject the file if it does not contain this field with error #2 and the message "Error due to absence of field `type` - the file is not recognized as a valid Meloc module."

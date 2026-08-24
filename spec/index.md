@@ -40,8 +40,6 @@ The value must be a safe name - see details in [[Safe names]]. The interpreter m
 
 Commonly the module will be hosted in a file system. The file that contains it must have exactly the same name as indicated in the `name` field. This requirement simplifies the process of resolving dependencies, and is mandatory even if the module is not being used as a dependency of another for now. See more details in [[Resolving Dependencies]]. The interpreter must reject any file whose name does not match the value of the `name` field with error #7 and the message "Error reading the file - the file name does not match the value of the `name` field."
 
-> **Nota**: queda pendiente definir qué requisitos aplican a la extensión del archivo. ¿Debe ser siempre `.yml`/`.yaml`?
-
 Example:
 `mood-tracker.yaml`
 ```yaml

@@ -19,7 +19,7 @@ Meloc uses modules as its basic unit of software composition and execution, comp
 | **Environment**      | Platform dependent       | Modular and runtime-agnostic            |
 
 ## Why Meloc?
-Meloc deliberately limits how software behavior can be expressed. This reduces expressiveness, but makes modules easier to understand, reason about, test, and audit.
+Meloc deliberately limits how software behavior can be declared. This reduces expressiveness, but makes modules easier to understand, reason about, test, and audit.
 
 Meloc aims to be a good alternative to general-purpose programming languages for most software, while leaving specialized low-level and high-performance use cases to other technologies.
 

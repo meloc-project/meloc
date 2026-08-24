@@ -32,10 +32,16 @@ type: meloc/module@0.0.0
 name: hello-world
 version: 1.0.0
 
+parameters:
+  - name: person
+    type: text
+    is-optional: yes
+    default-value: "world"
+
 methods:
   - name: start
-    type: text
-    formula: "Hello, world!"
+    return-type: text
+    formula: "Hello, {person}!"
 ```
 
 A Meloc module does not execute environment-specific instructions such as `print()`. Its start method simply returns text. The environment consuming the module decides what to do with that result.

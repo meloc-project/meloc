@@ -22,7 +22,7 @@ When limits are declared from the beginning, no patches need to be applied after
 Software must not depend on a specific language or platform. You should be able to execute it on any valid environment.
 
 ### 7. Controlled evolution
-The components must survive the interpreter’s versions. Breaking changes require major version + documented automatic migration. Better design procedures from the start means less breaking changes in time.
+Software must survive the versions of its base language. Breaking changes require major version and documented automatic migration. Better design from the start means less breaking changes in time.
 
 ## Who this is for
 Meloc **is not** for those who do not want to change their processes, nor for teams accustomed to complex business patterns.

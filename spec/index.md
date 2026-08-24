@@ -38,7 +38,7 @@ type: meloc/module@0.0.0
 ### `name`
 Declares the unique name that identifies the module. The interpreter must reject the file if it does not contain this field with error #5 and the message "Error due to absence of field `name` - the module does not have a name that identifies it."
 
-The value must be a safe name - see details in [[Safe names]]. The interpreter must reject any other type of name with error #6 and the message "Field error `name` - the value does not meet the secure name requirements - more information at https://github.com/meloc-project/meloc/spec/secure-names.md."
+The value must be a safe name - see details in [Safe Names](safe-names.md). The interpreter must reject any other type of name with error #6 and the message "Field error `name` - the value does not meet the safe name requirements - more information at https://github.com/meloc-project/meloc/spec/safe-names.md."
 
 Commonly the module will be hosted in a file system. The file that contains it must have exactly the same name as indicated in the `name` field. This requirement simplifies the process of resolving dependencies, and is mandatory even if the module is not being used as a dependency of another for now. See more details in [[Resolving Dependencies]]. The interpreter must reject any file whose name does not match the value of the `name` field with error #7 and the message "Error reading the file - the file name does not match the value of the `name` field."
 

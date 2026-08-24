@@ -1,5 +1,5 @@
-# Secure Names
-A safe name is a unique text that identifies a module or an element within it. Its purpose is to describe what it represents in a short, neutral, and humanly-readable format. The field `name`, present both in the module and in most of its elements, is a clear example of the use of safe names, unlike the `display-name` field, which allows text of any kind.
+# Safe Names
+A safe name is a unique text that identifies a module or an element within it. Its purpose is to describe what it represents in a short, neutral, and humanly-readable format. The field `name`, present both in the module and in most of its elements, is a clear example of the use of safe names, unlike the field `display-name`, which allows text of any kind.
 
 The requirements of the text are as follows:
 

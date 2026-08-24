@@ -5,10 +5,25 @@ A specification to build software through declarations. Define reusable modules 
 
 See the [specification](spec/index.md).
 
-> **Note**: a module is Meloc’s basic unit of software composition, just like a class is for object-oriented programming.
+## What Meloc does
+> **Note**: A module is Meloc’s basic unit of software composition and execution, comparable to a class in an object-oriented language or a WASM module.
+
+|Meloc                                                |Traditional languages               |
+|-----------------------------------------------------|------------------------------------|
+|Declarative structures                               |Imperative code                     |
+|Explicitly declared state                            |Freely managed state                |
+|Declarative formulas and rules                       |Instructions and algorithms         |
+|Deliberately constrained control flow                |Freely defined control flow         |
+|Human-readable abstractions                          |Implementation-oriented abstractions|
+|Auditability as a design priority                    |Depends on the code                 |
+|Deliberately constrained expressiveness              |General-purpose expressiveness      |
+|Efficiency is secondary to clarity and predictability|Efficiency can be a primary concern |
+|Designed to be runtime-agnostic                      |Interoperability depends on the ecosystem|
 
 ## Why Meloc?
 Meloc deliberately limits how software behavior can be expressed. This reduces expressiveness, but makes modules easier to understand, reason about, test, and audit.
+
+Meloc aims to be a good alternative to general-purpose programming languages for most software, while leaving specialized low-level and high-performance use cases to other technologies.
 
 |                     | Traditional languages         | Meloc |
 |----------------------|--------------------------------|---|
@@ -38,7 +53,9 @@ methods:
     formula: "Hello, world!"
 ```
 
-This is expected to work well with something like `meloc run hello-world` in your terminal.
+A Meloc module does not execute environment-specific instructions such as `print()`. Its start method simply returns text. The environment consuming the module decides what to do with that result.
+
+Because Meloc does not prescribe instructions that depend on a specific runtime environment, the same module can be interpreted from a console, web application, game, mobile app, or other environment.
 
 Want to know more? See the whole [specification](spec/index.md).
 
@@ -46,7 +63,7 @@ Want to know more? See the whole [specification](spec/index.md).
 - 🔬 Experimental — MVP in development
 - 📅 First functional case – Spring 2027
 
-**Note**: Interoperability with existing systems (REST APIs, databases) is planned for future versions.
+> **Note**: Interoperability with existing systems (REST APIs, databases) is planned for future versions.
 
 ## Contribute
 - Report any issue at GitHub ⚠️

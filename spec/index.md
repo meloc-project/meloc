@@ -1,13 +1,22 @@
 # The Meloc Specification
-
 - **Current version**: 0.0.0
-- **Last update**: 2026, 19 August
+- **Last update**: 2026, 24 August
 
 This **specification** defines the mandatory format that every Meloc module must follow. Use it as a technical reference to make your module valid, portable, and executable in any supported execution environment.
 
 ## Minimum requirements
+All Meloc modules must be valid [YAML 1.2](https://yaml.org/spec/1.2/) documents. Else, the interpreter must reject the file with error #1 and the message "Error reading the file - the content is not valid YAML 1.2."
 
-All Meloc modules must be valid [YAML 1.2](https://yaml.org/spec/1.2/) files. Else, the interpreter must reject the file with error #1 and the message "Error reading the file - the content is not valid YAML 1.2."
+### YAML features
+Not all features included in [YAML 1.2](https://yaml.org/spec/1.2/) are needed for parsing Meloc modules. In fact, our specification only requires the following features:
+
+| Feature                     | Usage in Meloc             |
+|-----------------------------|----------------------------|
+| Mappings (`{ key: value }`) | Define objects with fields |
+| Sequences (`- item`)        | Item lists                 |
+| Text scalar                 | All literal values         |
+| Block literals (`|`)        | Multiline formulas         |
+| Comments (`# text`)         | Optional documentation     |
 
 ### `type`
 Declares that the file is a Meloc module and indicates which version of the specification it uses. The interpreter must reject the file if it does not contain this field with error #2 and the message "Error due to absence of field `type` - the file is not recognized as a valid Meloc module."

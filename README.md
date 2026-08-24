@@ -7,7 +7,9 @@ See the [specification](spec/index.md).
 
 > **Note**: a module is Meloc’s basic unit of software composition, just like a class is for object-oriented programming.
 
-## Comparing Meloc
+## Why Meloc?
+Meloc deliberately limits how software behavior can be expressed. This reduces expressiveness, but makes modules easier to understand, reason about, test, and audit.
+
 |                     | Traditional languages         | Meloc |
 |----------------------|--------------------------------|---|
 | **Purpose**          | Express any algorithm          | Describe software behavior |

@@ -21,6 +21,8 @@ Not all features included in [YAML 1.2](https://yaml.org/spec/1.2/) are needed f
 
 When hosted in a file system, a Meloc module must include the file extension `.yaml` in its name. Note that omitting the extension or including `.yml` instead are not valid options. The corresponding MIME type, when needed, must be `text/yaml`.
 
+This specification uses concepts like text, number, list, or object freely referring to Meloc data types. Although they may be called similarly, Meloc data types are not YAML data types. Any value will be parsed the way Meloc represents data, not the way YAML does. See more information in [[Data Types]].
+
 ### `type`
 Declares that the file is a Meloc module and indicates which version of the specification it uses. The interpreter must reject the file if it does not contain this field with error #2 and the message "Error due to absence of field `type` - the file is not recognized as a valid Meloc module."
 

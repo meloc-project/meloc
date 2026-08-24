@@ -24,7 +24,7 @@ When hosted in a file system, a Meloc module must include the file extension `.y
 ### `type`
 Declares that the file is a Meloc module and indicates which version of the specification it uses. The interpreter must reject the file if it does not contain this field with error #2 and the message "Error due to absence of field `type` - the file is not recognized as a valid Meloc module."
 
-The value must be a text with the format "`meloc/module@[version]`". The interpreter must reject any other format with error #3 and the message "Error in field `type` - the value does not follow the expected format: `meloc/module@[version]`." The version must include all three numbers, without omitting any. See more details in [[Version System]].
+The value must be a text with the format "`meloc/module@[version]`". The interpreter must reject any other format with error #3 and the message "Error in field `type` - the value does not follow the expected format: `meloc/module@[version]`." The version must include all three numbers, without omitting any. See more details in [Version System](version-system.md).
 
 The interpreter must declare which specification version it supports. It must reject any version higher than the one it supports, and it must reject any lower version than the one it supports; it will do so with error #4 and the message "Error in the `type` field - the version `[0.x.y]` of Meloc is not compatible with this interpreter."
 
@@ -52,7 +52,7 @@ name: mood-tracker
 ### `version`
 Declares the current version of the module. The interpreter must reject the file if it does not contain this field with error #8 and the message "Error due to absence of field `version` - the module does not indicate what its current version is."
 
-The value must be a text that uses semantic versioning - see more details in [[Version System]]. The interpreter must reject any other format with error #9 and the message "Error of the field `version` - the value does not follow the semantic versioning format."
+The value must be a text that uses semantic versioning - see more details in [Version System](version-system.md). The interpreter must reject any other format with error #9 and the message "Error of the field `version` - the value does not follow the semantic versioning format."
 
 It is mandatory to always include the three numbers of the version - major, minor and patch. The interpreter must reject the value of the opposite with error n.º 10 and the message "Error in the `version` field - it is mandatory to include the three semantic versioning numbers: major, minor and patch".
 

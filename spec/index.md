@@ -12,6 +12,7 @@ Not all features included in [YAML 1.2](https://yaml.org/spec/1.2/) are needed f
 
 | Feature                       | Usage in Meloc             |
 |-------------------------------|----------------------------|
+| Unicode UTF-8                  | Text values and comments    |
 | Mappings (`{ key: value }`)   | Define objects with fields |
 | Sequences (`- item`)          | Item lists                 |
 | Text scalar                   | All literal values         |

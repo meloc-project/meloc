@@ -5,9 +5,9 @@ A specification to build software through declarations. Define reusable modules 
 
 See the [specification](spec/index.md).
 
-## What Meloc does
 > **Note**: A module is Meloc’s basic unit of software composition and execution, comparable to a class in an object-oriented language or a WASM module.
 
+## What Meloc does
 |Meloc                                                |Traditional languages               |
 |-----------------------------------------------------|------------------------------------|
 |Declarative structures                               |Imperative code                     |
@@ -24,19 +24,6 @@ See the [specification](spec/index.md).
 Meloc deliberately limits how software behavior can be expressed. This reduces expressiveness, but makes modules easier to understand, reason about, test, and audit.
 
 Meloc aims to be a good alternative to general-purpose programming languages for most software, while leaving specialized low-level and high-performance use cases to other technologies.
-
-|                     | Traditional languages         | Meloc |
-|----------------------|--------------------------------|---|
-| **Purpose**          | Express any algorithm          | Describe software behavior |
-| **Logic**            | Instructions and algorithms    | **Declarative formulas and rules** |
-| **Control flow**     | Freely defined                 | **Deliberately constrained** |
-| **State**            | Freely managed                 | **Explicitly declared** |
-| **Behavior**         | Implemented step by step       | Derived from state, formulas, and methods |
-| **Abstraction**      | Can reach low-level operations | **Deliberately separated from low-level operations**           |
-| **Auditability**     | Depends on the code            | **A design priority** |
-| **Expressiveness**   | General-purpose                | **Deliberately constrained** |
-| **Efficiency**       | Can be a primary concern       | Secondary to clarity and predictability |
-| **Interoperability** | Broad                          | Secondary to clarity and predictability |
 
 [Read the manifest](manifest.md).
 

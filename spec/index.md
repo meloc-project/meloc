@@ -1,6 +1,6 @@
 # The Meloc Specification
-- **Current version**: 0.0.0
-- **Last update**: 2026, 24 August
+- **Current version**: still in development
+- **Last update**: 2026, 25 August
 
 This **specification** defines the mandatory format that every Meloc module must follow. Use it as a technical reference to make your module valid, portable, and executable in any supported execution environment.
 

@@ -28,23 +28,23 @@ Meloc aims to be a good alternative to general-purpose programming languages for
 ## Minimal example
 `hello-world.yaml`
 ```yaml
+%YAML 1.2
 type: meloc/module@0.0.0
 name: hello-world
 version: 1.0.0
 
-parameters:
+inputs:
   - name: person
     type: text
     is-optional: yes
     default-value: "world"
 
-methods:
-  - name: start
-    return-type: text
+output:
+    type: text
     formula: "Hello, {person}!"
 ```
 
-A Meloc module does not execute environment-specific instructions such as `print()`. Its start method simply returns text. The environment consuming the module decides what to do with that result.
+A Meloc module does not execute environment-specific instructions such as `print()`. It just outputs data. The environment consuming the module decides what to do with that result.
 
 Because Meloc does not prescribe instructions that depend on a specific runtime environment, the same module can be interpreted from a console, web application, game, mobile app, or other environment.
 

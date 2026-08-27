@@ -37,11 +37,11 @@ inputs:
   - name: person
     type: text
     is-optional: yes
-    default-value: "world"
+    default-value: text(world)
 
 output:
     type: text
-    formula: "Hello, {person}!"
+    formula: text(Hello, {person}!)
 ```
 
 A Meloc module does not execute environment-specific instructions such as `print()`. It just outputs data. The environment consuming the module decides what to do with that result.

@@ -1,6 +1,6 @@
 # The Meloc Specification
 - **Current version**: still in development
-- **Last update**: 2026, 25 August
+- **Last update**: 2026, 31 August
 
 This **specification** defines the mandatory format that every Meloc module must follow. Use it as a technical reference to make your module valid, portable, and executable in any supported execution environment.
 
@@ -10,7 +10,7 @@ This **specification** defines the mandatory format that every Meloc module must
 **Module**: Meloc’s basic unit of software composition and execution, comparable to a class in an object-oriented language or a WASM module.
 
 Througout this document there are references to errors that the interpreter must throw on specific situations. For more information, see the full list of [Module Errors](module-errors.md).
-Si un supuesto módulo resulta no ser un documento YAML 1.2 válido,
+
 ## Minimum requirements
 Meloc modules are built using basic [YAML 1.2](https://yaml.org/spec/1.2/) syntax. If an intended module turns out not to be a valid YAML 1.2 document, the interpreter must reject the file with error #1 and the message "Error reading the file - the content is not valid YAML 1.2."
 

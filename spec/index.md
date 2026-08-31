@@ -87,6 +87,9 @@ name: tic-tac-toe-engine
 display-name: Tic-tac-toe Engine
 ```
 
+### `persistence`
+Declares where the data is stored. The default value is `memory`. Allowed values are `device`, `external`, and `memory`.
+
 ### `state`
 Declares a list of properties that define the state of the module. Each item in the list is called a state property. See more details in [[State Properties]].
 

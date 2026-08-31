@@ -95,10 +95,6 @@ Declares a list of properties that define the state of the module. Each item in 
 
 Example:
 ```yaml
-type: meloc/module@0.0.0
-name: to-dos-tool
-version: 0.0.0
-
 state:
   - name: to-dos
     type: list(record(label: text, is-done: assertion))

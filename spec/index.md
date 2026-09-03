@@ -4,7 +4,7 @@
 
 This **specification** defines the mandatory format that every Meloc module must follow. Use it as a technical reference to make your module valid, portable, and executable in any supported execution environment.
 
-## Basic terms
+## Concepts
 **Interpreter**: a tool able to read and execute Meloc modules. The tool must support one specific version of the Meloc Specification.
 
 **Module**: Meloc’s basic unit of software composition and execution, comparable to a class in an object-oriented language or a WASM module.

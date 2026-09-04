@@ -4,6 +4,13 @@
 
 This **specification** defines the mandatory format that every Meloc module must follow. Use it as a technical reference to make your module valid, portable, and executable in any supported execution environment.
 
+## Representation
+Meloc modules are represented using YAML 1.2.
+
+This specification defines the structure and semantics of Meloc modules independently of any implementation, API, or execution environment.
+
+Other tools may provide APIs or alternative representations for creating or manipulating Meloc modules, but these are outside the scope of this specification.
+
 ## Concepts
 **Interpreter**: a tool able to read and execute Meloc modules. The tool must support one specific version of the Meloc Specification.
 

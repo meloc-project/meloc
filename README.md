@@ -29,6 +29,7 @@ Meloc aims to be a good alternative to general-purpose programming languages for
 `hello-world.yaml`
 ```yaml
 %YAML 1.2
+---
 type: meloc/module@0.0.0
 name: hello-world
 version: 1.0.0

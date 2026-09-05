@@ -1,22 +1,31 @@
 # The Meloc Specification
 - **Current version**: still in development
-- **Last update**: 3 September 2026
+- **Last update**: 5 September 2026
 
 This **specification** defines the mandatory format that every Meloc module must follow. Use it as a technical reference to make your module valid, portable, and executable in any supported execution environment.
 
-## Representation
+## 1. Representation
 Meloc modules are represented using [YAML 1.2](https://yaml.org/spec/1.2/).
 
 This specification defines the structure and semantics of Meloc modules independently of any implementation, API, or execution environment.
 
 Other tools may provide APIs or alternative representations for creating or manipulating Meloc modules, but these are outside the scope of this specification.
 
-## Concepts
-**Interpreter**: a tool able to read and execute Meloc modules. The tool must support one specific version of the Meloc Specification.
+## 2. Concepts
 
-**Module**: Meloc’s basic unit of software composition and execution, comparable to a class in an object-oriented language or a WASM module.
+### 2.1 Module
+A **module** is a complete, self-contained piece of software defined by the Meloc Specification.
 
-Througout this document there are references to errors that the interpreter must throw on specific situations. For more information, see the full list of [Module Errors](module-errors.md).
+It is Meloc’s basic unit of software composition and execution, comparable to a class in an object-oriented language or a WASM module.
+
+A module defines its data, inputs, outputs, and behavior.
+
+### 2.2 Interpreter
+An **interpreter** is a program that executes a Meloc module.
+
+It reads the module and performs the behavior defined by this specification. The interpreter must declare which Meloc Specification versions it supports.
+
+Throughout this document, the interpreter is required to throw specific errors when defined conditions are met. See [Module Errors](module-errors.md) for the complete list of errors and the conditions that trigger them.
 
 ## Minimum requirements
 Meloc modules are built using basic [YAML 1.2](https://yaml.org/spec/1.2/) syntax. If an intended module turns out not to be a valid YAML 1.2 document, the interpreter must reject the file with error #1 and the message "Error reading the file - the content is not valid YAML 1.2."

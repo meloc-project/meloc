@@ -1,0 +1,20 @@
+%YAML 1.2
+---
+doctype: meloc/module
+name: hello
+---
+definitions:
+  - kind: input
+    name: name
+    type:
+      kind: text
+  - kind: output
+    type:
+      kind: text
+    formula:
+      kind: value
+      type: text
+      is-template: yes
+      value: Hello, {name}!
+      binds:
+        - name

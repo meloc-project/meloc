@@ -26,23 +26,21 @@ Meloc aims to be a good alternative to general-purpose programming languages for
 [Read the manifest](manifest.md).
 
 ## Minimal example
-`hello-world.yaml`
+`hello.yaml`
 ```yaml
 %YAML 1.2
 ---
-type: meloc/module@0.0.0
-name: hello-world
+doctype: meloc/module@0.0.0
+name: hello
 version: 1.0.0
 
 inputs:
   - name: person
     type: text
-    is-optional: yes
-    default-value: text(world)
 
 output:
     type: text
-    formula: text(Hello, {person}!)
+    formula: text "Hello, {person}!"
 ```
 
 A Meloc module does not execute environment-specific instructions such as `print()`. It just outputs data. The environment consuming the module decides what to do with that result.

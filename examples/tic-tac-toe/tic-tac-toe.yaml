@@ -1,0 +1,73 @@
+%YAML 1.2
+---
+doctype: meloc/module
+name: tic-tac-toe
+
+selects:
+  - name: symbol
+    type: text
+    options:
+      x: text "✗"
+      o: text "○"
+
+data:
+  - name: board
+    type:
+      kind: list
+      item-type: symbol
+      allows-empty-items: yes
+    initial-value: list(-count 9)
+
+actions:
+  - name: mark
+    modifies-data: yes
+    inputs:
+      - name: index
+        type: number
+        is-natural: yes
+        min-value: 1
+        max-value: 9
+    preconditions:
+      - formula: not is-game-over
+        error-message: "Game is over"
+      - formula: board.get(index).is(none)
+        error-message: "Cell is already occupied"
+    formula: board.get(index).set(current-player)
+
+derived:
+  - name: is-game-over
+    type: assertion
+    formula: winner != none or board.all(cell => cell != none)
+  - name: winner
+    type: symbol
+    allow-empty-value: yes
+    formula: |
+      lines.find-map(line => {
+        line.as(a, b, c => {
+          board.get(a)
+            if
+              board.get(a).equals(board.get(b)) and
+              board.get(b).equals(board.get(c))
+            else none
+        })
+      })
+  - name: current-player
+    type: symbol
+    formula: symbol.x if turn.is-odd else symbol.o
+  - name: turn
+    type: number
+    formula: board.filter(cell => cell != none).count.add(1)
+
+static:
+  - name: lines
+    type:
+      kind: list
+      item-type:
+        kind: list
+        item-type: number
+    value: |
+      [
+        [1, 2, 3], [4, 5, 6], [7, 8, 9], # horizontal
+        [1, 4, 7], [2, 5, 8], [3, 6, 9], # vertical
+        [1, 5, 9], [3, 5, 7], # diagonal
+      ]

@@ -1,0 +1,153 @@
+doctype: meloc/module
+
+declarations:
+  - kind: select
+    name: symbol
+    options:
+      - name: x
+        value:
+          kind: text
+          value: "✗"
+      - name: o
+        value:
+          kind: text
+          value: "○"
+
+  - kind: data
+    name: board
+    type:
+      kind: list
+      item:
+        kind: optional
+        item:
+          kind: ref
+          name: symbol
+    initial:
+      kind: fill
+      count: 9
+      value:
+        kind: none
+
+  - kind: action
+    name: mark
+    modifiesData: true
+    inputs:
+      - name: index
+        type:
+          kind: number
+    preconditions:
+      - kind: not
+        value:
+          kind: ref
+          name: is-game-over
+      - kind: equals
+        left:
+          kind: get
+          source: board
+          index:
+            kind: ref
+            name: index
+        right:
+          kind: none
+    body:
+      kind: set
+      target:
+        kind: get
+        source: board
+        index:
+          kind: ref
+          name: index
+      value:
+        kind: ref
+        name: current-player
+
+  - kind: derived
+    name: is-game-over
+    type:
+      kind: assertion
+    formula:
+      kind: or
+      left:
+        kind: not-equals
+        left:
+          kind: ref
+          name: winner
+        right:
+          kind: none
+      right:
+        kind: all-filled
+        source: board
+
+  - kind: derived
+    name: winner
+    type:
+      kind: optional
+      item:
+        kind: ref
+        name: symbol
+    formula:
+      kind: find-map
+      source:
+        kind: ref
+        name: lines
+      parameter: line
+      body:
+        kind: winner-from-line
+        board:
+          kind: ref
+          name: board
+        line:
+          kind: ref
+          name: line
+
+  - kind: derived
+    name: turn
+    type:
+      kind: number
+    formula:
+      kind: add
+      left:
+        kind: count-filled
+        source: board
+      right: 1
+
+  - kind: derived
+    name: current-player
+    type:
+      kind: ref
+      name: symbol
+    formula:
+      kind: if
+      condition:
+        kind: odd
+        value:
+          kind: ref
+          name: turn
+      then:
+        kind: member
+        source: symbol
+        name: x
+      else:
+        kind: member
+        source: symbol
+        name: o
+
+  - kind: static
+    name: lines
+    type:
+      kind: list
+      item:
+        kind: tuple
+        items:
+          - number
+          - number
+          - number
+    value:
+      - [1, 2, 3]
+      - [4, 5, 6]
+      - [7, 8, 9]
+      - [1, 4, 7]
+      - [2, 4, 7]
+      - [3, 5, 7]
+      - [1, 5, 9]
+      - [3, 5, 7]

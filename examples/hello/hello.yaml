@@ -1,0 +1,12 @@
+%YAML 1.2
+---
+doctype: meloc/module
+name: hello
+
+inputs:
+  - name: name
+    type: text
+
+output:
+  type: text
+  formula: text "Hello, {name}!"

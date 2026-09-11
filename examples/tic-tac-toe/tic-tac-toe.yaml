@@ -1,21 +1,15 @@
-%YAML 1.2
----
 doctype: meloc/module@0.0.0
 name: tic-tac-toe
 
 selects:
   - name: symbol
-    type: text
     options:
       x: text "✗"
       o: text "○"
 
 data:
   - name: board
-    type:
-      kind: list
-      item-type: symbol
-      allows-empty-items: yes
+    type: list(symbol?)
     initial-value: list(-count 9)
 
 actions:
@@ -29,9 +23,9 @@ actions:
         max-value: 9
     preconditions:
       - formula: not is-game-over
-        error-message: "Game is over"
+        error-message: Game is over
       - formula: board.get(index).is(none)
-        error-message: "Cell is already occupied"
+        error-message: Cell is already occupied
     formula: board.get(index).set(current-player)
 
 derived:
@@ -39,8 +33,7 @@ derived:
     type: assertion
     formula: winner != none or board.all(cell => cell != none)
   - name: winner
-    type: symbol
-    allow-empty-value: yes
+    type: symbol?
     formula: |
       lines.find-map(line => {
         line.as(a, b, c => {
@@ -60,11 +53,7 @@ derived:
 
 static:
   - name: lines
-    type:
-      kind: list
-      item-type:
-        kind: list
-        item-type: number
+    type: list(list(number))
     value: |
       [
         [1, 2, 3], [4, 5, 6], [7, 8, 9], # horizontal

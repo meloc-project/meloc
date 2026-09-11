@@ -2,8 +2,8 @@ doctype: meloc/module@0.0.0
 name: hello
 
 inputs:
-  - name: name
+  - name: person
     type: text
 
 output:
-  formula: text "Hello, {name}!"
+  formula: text "Hello, {person}!"

@@ -7,9 +7,11 @@ The requirements of the text are as follows:
 - The maximum length is 64 characters
 - May contain lowercase letters and numbers
 - Words are separated by dashes, instead of spaces
-- No other signs are allowed - which excludes spaces, periods, commas, parentheses, bars, addresses, questions, diacritics, special characters, etc.
+- First character must be a letter
+- No other signs are allowed — which excludes spaces, periods, commas, parentheses, bars, addresses, questions, diacritics, special characters, etc.
 
 Example:
+
 ```yaml
 name: tic-tac-toe-engine
 display-name: Tic-tac-toe Engine

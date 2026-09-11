@@ -40,7 +40,6 @@ inputs:
     type: text
 
 output:
-  type: text
   formula: text "Hello, {person}!"
 ```
 

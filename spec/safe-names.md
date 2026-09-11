@@ -7,7 +7,7 @@ The requirements of the text are as follows:
 - The maximum length is 64 characters
 - May contain lowercase letters and numbers
 - Words are separated by dashes, instead of spaces
-- First character must be a letter
+- First and last character must be letters
 - No other signs are allowed — which excludes spaces, periods, commas, parentheses, bars, addresses, questions, diacritics, special characters, etc.
 
 Example:

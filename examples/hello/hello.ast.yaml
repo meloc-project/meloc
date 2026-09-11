@@ -1,6 +1,6 @@
 %YAML 1.2
 ---
-doctype: meloc/module
+doctype: meloc/module-ast@0.0.0
 name: hello
 ---
 definitions:

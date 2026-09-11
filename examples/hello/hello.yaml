@@ -1,4 +1,4 @@
-doctype: meloc/module
+doctype: meloc/module@0.0.0
 name: hello
 
 inputs:

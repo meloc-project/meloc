@@ -46,16 +46,16 @@ When hosted in a file system, a Meloc module must include the file extension `.y
 
 This specification uses concepts like text, number, list, or object freely referring to Meloc data types. Although they may be called similarly, Meloc data types are not YAML data types. Any value will be parsed the way Meloc represents data, not the way YAML does. See more information in [[Data Types]].
 
-### `type`
-Declares that the file is a Meloc module and indicates which version of the specification it uses. The interpreter must reject the file if it does not contain this field with error #2 and the message "Error due to absence of field `type` - the file is not recognized as a valid Meloc module."
+### `doctype`
+Declares that this YAML document represents a Meloc module and indicates which version of the specification it uses. The interpreter must reject the file if it does not contain this field with error #2 and the message "Error due to absence of field `doctype` - the file is not recognized as a valid Meloc module."
 
-The value must be a text with the format "`meloc/module@[version]`". The interpreter must reject any other format with error #3 and the message "Error in field `type` - the value does not follow the expected format: `meloc/module@[version]`." The version must include all three numbers, without omitting any. See more details in [Version System](version-system.md).
+The value must be a text with the format "`meloc/module@[version]`". The interpreter must reject any other format with error #3 and the message "Error in field `doctype` - the value does not follow the expected format: `meloc/module@[version]`." The version must include all three numbers, without omitting any. See more details in [Version System](version-system.md).
 
-The interpreter must declare which specification version it supports. It must reject any version higher than the one it supports, and it must reject any lower version than the one it supports; it will do so with error #4 and the message "Error in the `type` field - the version `[0.x.y]` of Meloc is not compatible with this interpreter."
+The interpreter must declare which specification version it supports. It must reject any version higher than the one it supports, and it must reject any lower version than the one it supports; it will do so with error #4 and the message "Error in the `doctype` field - the version `[0.x.y]` of Meloc is not compatible with this interpreter."
 
 Example:
 ```yaml
-type: meloc/module@0.0.0
+doctype: meloc/module@0.0.0
 ```
 
 ### `name`
@@ -68,7 +68,7 @@ Commonly the module will be hosted in a file system. The file that contains it m
 Example:
 `mood-tracker.yaml`
 ```yaml
-type: meloc/module@0.0.0
+doctype: meloc/module@0.0.0
 name: mood-tracker
 ```
 
@@ -84,7 +84,7 @@ If the component is hosted in a file system, the file that contains it can indic
 Example:
 `tic-tac-toe-engine@1.2.yaml`
 ```yaml
-type: meloc/module@0.0.0
+doctype: meloc/module@0.0.0
 name: tic-tac-toe-engine
 version: 1.2.0
 ```

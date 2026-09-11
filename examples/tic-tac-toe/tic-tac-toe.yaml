@@ -1,6 +1,6 @@
 %YAML 1.2
 ---
-doctype: meloc/module
+doctype: meloc/module@0.0.0
 name: tic-tac-toe
 
 selects:

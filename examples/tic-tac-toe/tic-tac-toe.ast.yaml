@@ -1,4 +1,4 @@
-doctype: meloc/module
+doctype: meloc/module-ast@0.0.0
 
 declarations:
   - kind: select

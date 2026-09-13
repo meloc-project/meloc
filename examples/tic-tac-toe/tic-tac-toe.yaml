@@ -31,7 +31,7 @@ actions:
 derived:
   - name: is-game-over
     type: assertion
-    formula: winner != none or board.all(cell => cell != none)
+    formula: winner.notEquals(none) or board.all(cell => cell.notEquals(none))
   - name: winner
     type: symbol?
     formula: |

@@ -31,23 +31,23 @@ actions:
 derived:
   - name: is-game-over
     type: assertion
-    formula: winner.notEquals(none) or board.all(cell => cell.notEquals(none))
+    formula: winner.notEquals(none) or board.all(it.notEquals(none))
   - name: winner
     type: symbol?
     formula: |
-      lines.find-map(line => {
+      lines.find-map(
         if
-          board.get(line.get(1)).equals(board.get(line.get(2))) and
-          board.get(line.get(2)).equals(board.get(line.get(3)))
+          board.get(it.get(1)).equals(board.get(it.get(2))) and
+          board.get(it.get(2)).equals(board.get(it.get(3)))
         then board.get(a)
         else none
-      })
+      )
   - name: current-player
     type: symbol
     formula: symbol.x if turn.is-odd else symbol.o
   - name: turn
     type: number
-    formula: board.filter(cell => cell.notEquals(none)).count.add(1)
+    formula: board.filter(it.notEquals(none)).count.add(1)
 
 static:
   - name: lines

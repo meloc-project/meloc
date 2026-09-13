@@ -1,0 +1,9 @@
+doctype: meloc/module@0.0.0
+name: person
+version: 1.0.0
+
+inputs:
+  - name: name
+    type: text
+  - name: age
+    type: number

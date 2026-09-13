@@ -1,0 +1,13 @@
+doctype: meloc/module@0.0.0
+name: hello-with-age
+dependencies:
+  person: 1.0.0
+
+static:
+  - name: person
+    type: person
+    value: person("world", 4500000000)
+
+output:
+  formula: |
+    "Hello, {person.name}! You are {person.age.to-text(-include-thousand-separators)} years old."

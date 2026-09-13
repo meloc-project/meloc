@@ -3,7 +3,8 @@ name: hello
 
 inputs:
   - name: person
-    type: text
+    type: text?
+    default-value: text "world"
 
 output:
   formula: text "Hello, {person}!"

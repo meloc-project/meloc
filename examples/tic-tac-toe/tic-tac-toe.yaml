@@ -39,7 +39,7 @@ derived:
         if
           board.get(it.get(1)).equals(board.get(it.get(2))) and
           board.get(it.get(2)).equals(board.get(it.get(3)))
-        then board.get(1)
+        then board.get(it.get(1))
         else none
       )
   - name: current-player

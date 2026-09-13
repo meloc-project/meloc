@@ -36,13 +36,11 @@ derived:
     type: symbol?
     formula: |
       lines.find-map(line => {
-        line.as(a, b, c => {
-          board.get(a)
-            if
-              board.get(a).equals(board.get(b)) and
-              board.get(b).equals(board.get(c))
-            else none
-        })
+        if
+          board.get(line.get(1)).equals(board.get(line.get(2))) and
+          board.get(line.get(2)).equals(board.get(line.get(3)))
+        then board.get(a)
+        else none
       })
   - name: current-player
     type: symbol

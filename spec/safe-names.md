@@ -9,7 +9,8 @@ The requirements of the text are as follows:
 - Words are separated by dashes, instead of spaces
 - No consecutive dashes are allowed
 - First and last character must be letters
-- No other signs are allowed — which excludes spaces, periods, commas, parentheses, bars, addresses, questions, diacritics, special characters, etc.
+- No other signs are allowed —which excludes spaces, periods, commas, parentheses, bars, addresses, questions, diacritics, special characters, etc.
+- Cannot match a reserved word —see [[Reserved Rords]]
 
 Example:
 

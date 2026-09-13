@@ -47,7 +47,7 @@ derived:
     formula: symbol.x if turn.is-odd else symbol.o
   - name: turn
     type: number
-    formula: board.filter(cell => cell != none).count.add(1)
+    formula: board.filter(cell => cell.notEquals(none)).count.add(1)
 
 static:
   - name: lines

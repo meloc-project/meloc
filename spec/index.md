@@ -113,5 +113,5 @@ Example:
 ```yaml
 state:
   - name: to-dos
-    type: list(record(label: text, is-done: assertion))
+    type: list(record(-label text, -is-done assertion))
 ```

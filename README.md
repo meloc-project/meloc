@@ -40,7 +40,7 @@ inputs:
     type: text
 
 output:
-  formula: text "Hello, {person}!"
+  formula: expr "Hello, {person}!"
 ```
 
 A Meloc module does not execute environment-specific instructions such as `print()`. It just outputs data. The environment consuming the module decides what to do with that result.

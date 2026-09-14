@@ -4,7 +4,7 @@ name: hello
 inputs:
   - name: person
     type: text?
-    default-value: text "world"
+    default-value: expr "world"
 
 output:
-  formula: text "Hello, {person}!"
+  formula: expr "Hello, {person}!"

@@ -4,8 +4,8 @@ name: tic-tac-toe
 selects:
   - name: symbol
     options:
-      x: text "✗"
-      o: text "○"
+      x: expr "✗"
+      o: expr "○"
 
 data:
   - name: board

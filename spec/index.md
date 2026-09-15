@@ -1,6 +1,6 @@
 # The Meloc Specification
 - **Current version**: still in development
-- **Last update**: 5 September 2026
+- **Last update**: 15 September 2026
 
 This **specification** defines the mandatory format that every Meloc module must follow. Use it as a technical reference to make your module valid, portable, and executable in any supported execution environment.
 
@@ -104,7 +104,7 @@ display-name: Tic-tac-toe Engine
 ```
 
 ### `persistence`
-Declares where the data is stored. The default value is `memory`. Allowed values are `device`, `external`, and `memory`.
+Reserved field for future use. For now, memory is the only persistence available for Meloc modules.
 
 ### `state`
 Declares a list of properties that define the state of the module. Each item in the list is called a state property. See more details in [[State Properties]].

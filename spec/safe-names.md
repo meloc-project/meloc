@@ -1,4 +1,5 @@
 # Safe Names
+
 A safe name is a unique text that identifies a module or an element within it. Its purpose is to describe what it represents in a short, neutral, and humanly-readable format. The field `name`, present both in the module and in most of its elements, is a clear example of the use of safe names, unlike the field `display-name`, which allows text of any kind.
 
 The requirements of the text are as follows:
@@ -10,7 +11,7 @@ The requirements of the text are as follows:
 - No consecutive dashes are allowed
 - First and last character must be letters
 - No other signs are allowed —which excludes spaces, periods, commas, parentheses, bars, addresses, questions, diacritics, special characters, etc.
-- Cannot match a reserved word —see [[Reserved Rords]]
+- Cannot match a reserved word —see [[Reserved Words]]
 
 Example:
 

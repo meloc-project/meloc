@@ -1,20 +1,20 @@
 doctype: meloc/module@0.0.0
 name: tic-tac-toe
 
+data:
+  - name: board
+    type: list(symbol?)
+    count: 9
+
 selects:
   - name: symbol
+    option-type: text
     options:
       x: expr "✗"
       o: expr "○"
 
-data:
-  - name: board
-    type: list(symbol?)
-    initial-value: list(-count 9)
-
 actions:
   - name: mark
-    modifies-data: yes
     inputs:
       - name: index
         type: number
@@ -22,39 +22,44 @@ actions:
         min-value: 1
         max-value: 9
     preconditions:
-      - formula: not is-game-over
-        error-message: Game is over
-      - formula: board.get(index).is(none)
-        error-message: Cell is already occupied
-    formula: board.get(index).set(current-player)
+      - check: not is-game-over
+        error-message: expr "Game is over"
+      - check: board.get(index).equals(none)
+        error-message: expr "Cell is already occupied"
+    modifies-data: yes
+    do: board.get(index).set(current-player)
 
 derived:
-  - name: is-game-over
-    type: assertion
-    formula: winner.notEquals(none) or board.all(it.notEquals(none))
-  - name: winner
-    type: symbol?
-    formula: |
-      lines.find-map(
-        if
-          board.get(it.get(1)).equals(board.get(it.get(2))) and
-          board.get(it.get(2)).equals(board.get(it.get(3)))
-        then board.get(it.get(1))
-        else none
-      )
   - name: current-player
     type: symbol
-    formula: symbol.x if turn.is-odd else symbol.o
+    formula: if turn.is-odd then symbol.x else symbol.y
   - name: turn
     type: number
-    formula: board.filter(it.notEquals(none)).count.add(1)
-
-static:
+    formula: board.filled.count.add(1)
+  - name: is-game-over
+    type: assertion
+    formula: not winner.equals(none) or board.filled.count.equals(9)
+  - name: winner
+    type: symbol
+    formula: |
+      lines.find-and-transform(
+        if it.get(1).equals(it.get(2)) and it.get(2).equals(it.get(3))
+        then it.get(1)
+        else none
+      )
   - name: lines
-    type: list(list(number))
-    value: |
+    type: list(list(symbol))
+    formula: |
       list(
-        list(1, 2, 3), list(4, 5, 6), list(7, 8, 9), # horizontal
-        list(1, 4, 7), list(2, 5, 8), list(3, 6, 9), # vertical
-        list(1, 5, 9), list(3, 5, 7), # diagonal
+        # horizontal
+        board.get-many(1, 2, 3),
+        board.get-many(4, 5, 6),
+        board.get-many(7, 8, 9),
+        # vertical
+        board.get-many(1, 4, 7),
+        board.get-many(2, 5, 8),
+        board.get-many(3, 6, 9), 
+        # diagonal
+        board.get-many(1, 5, 9),
+        board.get-many(3, 5, 7)
       )

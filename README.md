@@ -35,12 +35,13 @@ Meloc aims to be a good alternative to general-purpose programming languages for
 doctype: meloc/module@0.0.0
 name: hello
 
+output:
+  type: text
+  formula: expr "Hello, {person}!"
+
 inputs:
   - name: person
     type: text
-
-output:
-  formula: expr "Hello, {person}!"
 ```
 
 A Meloc module does not execute environment-specific instructions such as `print()`. It just outputs data. The environment consuming the module decides what to do with that result.

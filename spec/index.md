@@ -1,31 +1,47 @@
 # The Meloc Specification
+
 - **Current version**: still in development
-- **Last update**: 15 September 2026
+- **Last update**: 20 September 2026
 
 This **specification** defines the mandatory format that every Meloc module must follow. Use it as a technical reference to make your module valid, portable, and executable in any supported execution environment.
 
-## 1. Representation
-Meloc modules are represented using [YAML 1.2](https://yaml.org/spec/1.2/).
+## 1. Concepts
 
-This specification defines the structure and semantics of Meloc modules independently of any implementation, API, or execution environment.
+A **module** is a [YAML 1.2](https://yaml.org/spec/1.2/) document that represents a complete, self-contained piece of software defined by the Meloc Specification. The tool that reads and executes it is the **interpreter**. The person, entity or technology that writes it is the **author**.
 
-Other tools may provide APIs or alternative representations for creating or manipulating Meloc modules, but these are outside the scope of this specification.
+Features of Meloc modules:
 
-## 2. Concepts
+- Executable
+- Self-descriptive
+- Minimal
+- Receive and return data
+- Declare and manage internal data
+- Offer available actions
 
-### 2.1 Module
-A **module** is a complete, self-contained piece of software defined by the Meloc Specification.
+## 2. Execution
 
-It is Meloc’s basic unit of software composition and execution, comparable to a class in an object-oriented language or a WASM module.
+When the interpreter reads a module, it first analyzes whether it is valid. If so, it returns relevant descriptive errors. Otherwise, it runs the module.
 
-A module defines its data, inputs, outputs, and behavior.
+The interpreter will execute the module in the following order:
 
-### 2.2 Interpreter
-An **interpreter** is a program that executes a Meloc module.
+- Load metadata —name and display-name
+- Loads static data —static
+- Receive input data —inputs
+- Load internal data —data
+- Process the derived data —derived
+- Load the available actions —actions
+- Execute the action if any has been requested
 
-It reads the module and performs the behavior defined by this specification. The interpreter must declare which Meloc Specification versions it supports.
+The interpreter is responsible for managing data persistence, which will be in memory by default whenever the environment allows it.
 
-Throughout this document, the interpreter is required to throw specific errors when defined conditions are met. See [Module Errors](module-errors.md) for the complete list of errors and the conditions that trigger them.
+## Validity
+
+A module is valid if:
+
+- It is a valid [YAML 1.2](https://yaml.org/spec/1.2/) document
+- Has a valid doctype field
+- You have a valid field name
+- The rest of the fields, if present, are valid
 
 ## Minimum requirements
 Meloc modules are built using basic [YAML 1.2](https://yaml.org/spec/1.2/) syntax. If an intended module turns out not to be a valid YAML 1.2 document, the interpreter must reject the file with error #1 and the message "Error reading the file - the content is not valid YAML 1.2."

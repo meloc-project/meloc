@@ -57,8 +57,6 @@ Want to know more? See the whole [specification](spec/index.md).
 - 📅 Future releases adding storage capabilities — Hopefully winter 2027
 - 📅 Future releases integrating the core interpreter in more environments and implementing more capabilities — Coming Soon
 
-> **Note**: Interoperability with existing systems (REST APIs, databases) is planned for future versions.
-
 ## Contribute
 
 - Report any issue at GitHub ⚠️

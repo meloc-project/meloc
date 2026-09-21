@@ -88,22 +88,12 @@ doctype: meloc/module@0.0.0
 name: mood-tracker
 ```
 
-### `version`
-
-Field reserved for future use. If used, it should declare a semantic version of the module.
-
-Example:
-`tic-tac-toe-engine@1.2.0.yaml`
-```yaml
-doctype: meloc/module@0.0.0
-name: tic-tac-toe-engine
-version: 1.2.0
-```
-
 ## Beyond what is required
+
 For the module to be consistent, you need additional fields such as those described in this section. Its use is not mandatory and will depend on the purpose or needs of the module  - see more details in [[Design Models]].
 
 ### `display-name`
+
 Declare the natural name of the module, as opposed to its safe name - field `name`. The value must be a text.
 
 > **Nota**: queda pendiente definir qué hace el intérprete si encuentra un valor vacío explícito en el campo. ¿Existe un modo estricto en YAML para evitar esto en cualquier campo?
@@ -115,9 +105,11 @@ display-name: Tic-tac-toe Engine
 ```
 
 ### `persistence`
-Reserved field for future use. For now, memory is the only persistence available for Meloc modules.
+
+Field reserved for future use. For now, memory is the only persistence available for Meloc modules.
 
 ### `state`
+
 Declares a list of properties that define the state of the module. Each item in the list is called a state property. See more details in [[State Properties]].
 
 Example:
@@ -125,4 +117,16 @@ Example:
 state:
   - name: to-dos
     type: list(record(-label text, -is-done assertion))
+```
+
+### `version`
+
+Field reserved for future use. If used, it should declare a semantic version of the module.
+
+Example:
+`tic-tac-toe-engine@1.2.0.yaml`
+```yaml
+doctype: meloc/module@0.0.0
+name: tic-tac-toe-engine
+version: 1.2.0
 ```

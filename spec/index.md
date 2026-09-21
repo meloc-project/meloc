@@ -89,16 +89,11 @@ name: mood-tracker
 ```
 
 ### `version`
-Declares the current version of the module. The interpreter must reject the file if it does not contain this field with error #8 and the message "Error due to absence of field `version` - the module does not indicate what its current version is."
 
-The value must be a text that uses semantic versioning - see more details in [Version System](version-system.md). The interpreter must reject any other format with error #9 and the message "Error of the field `version` - the value does not follow the semantic versioning format."
-
-It is mandatory to always include the three numbers of the version - major, minor and patch. The interpreter must reject the value of the opposite with error n.º 10 and the message "Error in the `version` field - it is mandatory to include the three semantic versioning numbers: major, minor and patch".
-
-If the component is hosted in a file system, the file that contains it can indicate the version within the file name. In such a case, the name of the module and its version must be separated by an address and the version must fit with the one indicated in the `version` field - for example, both `my-component@2` and `my-component@2.5` fit with version `2.5.8` and would be valid. This requirement simplifies the dependency resolution process - see more details in [[Resolving dependencies]]. The interpreter must reject any file whose name includes the version and it does not match the value of the `version` field with error #11 and the message "Error reading file - the version included in the name does not match the value of the `version` field."
+Field reserved for future use. If used, it should declare a semantic version of the module.
 
 Example:
-`tic-tac-toe-engine@1.2.yaml`
+`tic-tac-toe-engine@1.2.0.yaml`
 ```yaml
 doctype: meloc/module@0.0.0
 name: tic-tac-toe-engine
